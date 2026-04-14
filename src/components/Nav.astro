@@ -1,0 +1,57 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/work', label: 'Work' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'About' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="nav-header">
+  <nav class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Home">
+      <span class="logo-mark">AK</span>
+      <span class="logo-name">Alex Kim</span>
+    </a>
+    
+    <ul class="nav-links" role="list">
+      {navLinks.map(link => (
+        <li>
+          <a 
+            href={link.href} 
+            class:list={['nav-link', { active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <a href="mailto:hello@alexkim.dev" class="nav-cta">
+      Let's talk →
+    </a>
+  </nav>
+</header>
+
+<style>
+  .nav-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: color-mix(in srgb, var(--paper) 90%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 700px) {
+    .logo-name { display: none; }
+    .nav-links { gap: 0; }
+    .nav-link { padding: 0.4rem 0.6rem; }
+    .nav-cta { display: none; }
+  }
+</style>

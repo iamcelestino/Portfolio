@@ -1,0 +1,219 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const projects = [
+  {
+    id: "01",
+    name: "Meridian",
+    type: "Product Design & Development",
+    year: "2024",
+    client: "Personal Project",
+    description: "A time-tracking app for freelancers that strips away everything that doesn't matter. Built after spending a week bouncing between five different tools, none of which felt like they were made for how creative people actually work.",
+    longDesc: "The core insight: most time-trackers are built for managers, not makers. Meridian tracks time the way a freelancer thinks — by project and feel, not by ticket and department. The result is a tool that gets out of the way.",
+    tags: ["Svelte", "SQLite", "Product Design", "UX Research"],
+    color: "#1a3a5c",
+    accent: "#4a9eff",
+    stat1: { val: "2.1k", label: "Active users" },
+    stat2: { val: "4.8★", label: "App store" },
+    link: "#",
+  },
+  {
+    id: "02",
+    name: "Folio CMS",
+    type: "Open Source Tool",
+    year: "2024",
+    client: "Open Source",
+    description: "A headless CMS built specifically for creative agencies. Existing solutions were either too opinionated about structure or too primitive to model the complex relationships between campaigns, assets, and clients.",
+    longDesc: "The schema builder supports recursive and polymorphic content types. The media layer handles editorial workflows with approval states. 2.4k GitHub stars and growing.",
+    tags: ["TypeScript", "Node.js", "React", "PostgreSQL"],
+    color: "#2d1b4e",
+    accent: "#a78bfa",
+    stat1: { val: "2.4k", label: "GitHub stars" },
+    stat2: { val: "340+", label: "Contributors" },
+    link: "#",
+  },
+  {
+    id: "03",
+    name: "Grounded",
+    type: "Brand Identity & E-commerce",
+    year: "2023",
+    client: "Grounded Coffee Co.",
+    description: "Full brand identity and e-commerce experience for an ethical coffee roaster launching direct-to-consumer. The brief was 'honest luxury' — premium quality without the pretension.",
+    longDesc: "Designed a visual system rooted in the earthy tones of origin countries, paired with a warm serif and plenty of breathing room. Built the Shopify storefront with custom subscription logic and a sourcing transparency page.",
+    tags: ["Branding", "Shopify", "Motion Design", "Figma"],
+    color: "#2a1a0e",
+    accent: "#c8410a",
+    stat1: { val: "340%", label: "Launch month sales" },
+    stat2: { val: "68%", label: "Subscription rate" },
+    link: "#",
+  },
+  {
+    id: "04",
+    name: "Waypoint",
+    type: "SaaS Dashboard",
+    year: "2023",
+    client: "Waypoint Analytics",
+    description: "A B2B analytics dashboard for logistics companies tracking fleet performance. The challenge: surface actionable intelligence from thousands of data points without overwhelming operations teams.",
+    longDesc: "Designed a progressive disclosure system where the default view shows only what needs attention, and detail layers reveal on demand. Reduced average time-to-decision from 8 minutes to under 90 seconds.",
+    tags: ["Figma", "React", "D3.js", "Design Systems"],
+    color: "#0f2a1a",
+    accent: "#22c55e",
+    stat1: { val: "90s", label: "Time-to-decision" },
+    stat2: { val: "98%", label: "Client retention" },
+    link: "#",
+  },
+  {
+    id: "05",
+    name: "Almanac",
+    type: "iOS App",
+    year: "2022",
+    client: "Personal Project",
+    description: "A daily journaling app with a twist: it resurfaces old entries on their anniversary, building a private record of growth over time. Designed around the ritual of writing, not the anxiety of streaks.",
+    longDesc: "SwiftUI, no subscriptions, no social features, no growth hacking. Just a quiet, beautiful place to write. Featured by Apple in App Store editorial.",
+    tags: ["SwiftUI", "iOS", "UX Design", "Typography"],
+    color: "#1a1a2e",
+    accent: "#818cf8",
+    stat1: { val: "15k+", label: "Downloads" },
+    stat2: { val: "Apple", label: "Editorial pick" },
+    link: "#",
+  },
+  {
+    id: "06",
+    name: "Mural",
+    type: "Design System",
+    year: "2022",
+    client: "Undisclosed — NDA",
+    description: "A complete design system for a Series B fintech serving 1.2M users. Unified three divergent product lines under one visual language while maintaining the personality of each brand.",
+    longDesc: "85 components, 12 semantic color tokens, 4 brand themes, 1 Figma library, and a documentation site. Adopted by a team of 22 designers and 60 engineers in 6 weeks.",
+    tags: ["Design Systems", "Tokens", "Figma", "Storybook"],
+    color: "#1a0a0a",
+    accent: "#f87171",
+    stat1: { val: "85", label: "Components" },
+    stat2: { val: "6wks", label: "Full adoption" },
+    link: "#",
+  },
+];
+
+const services = [
+  { name: "Product Design", desc: "From concept to shipping — research, wireframes, high-fidelity UI, and prototypes." },
+  { name: "Frontend Development", desc: "React, Svelte, Astro. Fast, accessible, and built to last." },
+  { name: "Design Systems", desc: "Tokens, components, documentation, and the process to keep them alive." },
+  { name: "Brand Identity", desc: "Visual identity systems for startups and growing companies." },
+];
+---
+
+<Base title="Work — Alex Kim" description="Selected projects spanning product design, frontend development, and brand identity.">
+  <Nav />
+
+  <main>
+    <header class="work-header">
+      <div class="header-inner">
+        <p class="header-pre">Selected Work</p>
+        <h1 class="header-title">Projects I'm<br /><em>proud of.</em></h1>
+        <p class="header-sub">Eight years of work distilled into the pieces that mattered most. A mix of product design, open source, and brand work.</p>
+      </div>
+    </header>
+
+    <section class="projects-section">
+      <div class="projects-inner">
+        {projects.map((project) => (
+          <article class="project" id={`project-${project.id}`}>
+            <div class="project-sidebar">
+              <span class="project-num">{project.id}</span>
+              <div class="project-meta">
+                <p class="meta-type">{project.type}</p>
+                <p class="meta-client">{project.client}</p>
+                <p class="meta-year">{project.year}</p>
+              </div>
+            </div>
+
+            <div class="project-main">
+              <div class="project-visual" style={`background: ${project.color}`}>
+                <div class="visual-glow" style={`background: radial-gradient(circle at 30% 50%, ${project.accent}22 0%, transparent 60%)`}></div>
+                <span class="visual-name" style={`color: ${project.accent}`}>{project.name}</span>
+                <div class="visual-stats">
+                  <div class="visual-stat">
+                    <span class="vs-val">{project.stat1.val}</span>
+                    <span class="vs-label">{project.stat1.label}</span>
+                  </div>
+                  <div class="visual-stat">
+                    <span class="vs-val">{project.stat2.val}</span>
+                    <span class="vs-label">{project.stat2.label}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <h2 class="project-title">{project.name}</h2>
+                <p class="project-desc">{project.description}</p>
+                <p class="project-long">{project.longDesc}</p>
+
+                <div class="project-tags">
+                  {project.tags.map(tag => <span class="tag">{tag}</span>)}
+                </div>
+
+                <a href={project.link} class="project-link">
+                  View case study →
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services-section">
+      <div class="services-inner">
+        <div class="services-header">
+          <h2 class="services-title">What I do</h2>
+          <p class="services-sub">I work across the full product lifecycle — from shaping ideas to shipping them.</p>
+        </div>
+        <div class="services-grid">
+          {services.map((service, i) => (
+            <div class="service-card">
+              <span class="service-num">0{i + 1}</span>
+              <h3 class="service-name">{service.name}</h3>
+              <p class="service-desc">{service.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA strip -->
+    <section class="cta-strip">
+      <div class="cta-inner">
+        <h2 class="cta-text">Have a project in mind?</h2>
+        <a href="mailto:hello@alexkim.dev" class="cta-btn">Let's talk →</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Base>
+
+<style>
+
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .service-card:nth-child(2) { border-right: none; }
+    .service-card:nth-child(1),
+    .service-card:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.1); }
+  }
+
+  @media (max-width: 860px) {
+    .project { grid-template-columns: 1fr; gap: 2rem; }
+    .project-sidebar { flex-direction: row; align-items: center; }
+    .project-num { font-size: 2.5rem; }
+    .project-main { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .services-header { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  }
+</style>

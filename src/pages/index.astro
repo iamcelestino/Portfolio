@@ -1,0 +1,183 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const projects = [
+  {
+    name: "Meridian",
+    type: "Product Design & Dev",
+    year: "2024",
+    description: "A time-tracking app for freelancers that doesn't feel like work. Built with Svelte and SQLite.",
+    tags: ["Svelte", "Design Systems", "UX"],
+    color: "#1a3a5c",
+  },
+  {
+    name: "Folio CMS",
+    type: "Open Source",
+    year: "2024",
+    description: "Headless CMS built specifically for creative agencies. 2.4k GitHub stars, actively maintained.",
+    tags: ["TypeScript", "Node.js", "React"],
+    color: "#2d1b4e",
+  },
+  {
+    name: "Grounded",
+    type: "Brand & Interface",
+    year: "2023",
+    description: "Full brand identity and e-commerce experience for an ethical coffee roaster.",
+    tags: ["Branding", "Shopify", "Motion"],
+    color: "#2a1a0e",
+  },
+];
+---
+
+<Base title="Alex Kim — Designer & Developer">
+  <Nav />
+  
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for work · Based in Angola
+        </div>
+        <h1 class="hero-title">
+          I Code and Convert
+          <em>things people</em>
+          actually use.
+        </h1>
+        <p class="hero-sub">
+          Marketer-developer hybrid with 1 years shipping products at the intersection of craft and engineering. Currently helping NGOs Conquequing the digital world in Angola.
+        </p>
+        <div class="hero-actions">
+          <a href="/work" class="btn btn-primary">View my work</a>
+          <a href="/blog" class="btn btn-ghost">Read the blog →</a>
+        </div>
+      </div>
+
+      <div class="hero-figure">
+        <div class="figure-card">
+          <div class="figure-avatar"></div>
+          <div class="figure-stats">
+            <div class="stat">
+              <span class="stat-num">1+</span>
+              <span class="stat-label">Years of craft</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Projects shipped</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">5</span>
+              <span class="stat-label">Happy clients</span>
+            </div>
+          </div>
+        </div>
+        <div class="figure-tools">
+          <span>Figma</span>
+          <span>Astro</span>
+          <span>TypeScript</span>
+          <span>React Js</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Work -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">Selected Work</h2>
+          <a href="/work" class="section-link">All projects →</a>
+        </div>
+        <div class="projects-grid">
+          {projects.map((project, i) => (
+            <article class="project-card" style={`--card-color: ${project.color}`}>
+              <div class="card-header">
+                <div class="card-meta">
+                  <span class="card-type">{project.type}</span>
+                  <span class="card-year">{project.year}</span>
+                </div>
+              </div>
+              <div class="card-visual">
+                <span class="card-num">0{i + 1}</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-name">{project.name}</h3>
+                <p class="card-desc">{project.description}</p>
+                <div class="card-tags">
+                  {project.tags.map(tag => <span class="tag">{tag}</span>)}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">From the Blog</h2>
+          <a href="/blog" class="section-link">All posts →</a>
+        </div>
+        <div class="posts-list">
+          {posts.map((post) => (
+            <a href={`/blog/${post.id}`} class="post-row">
+              <div class="post-row-left">
+                <h3 class="post-row-title">{post.data.title}</h3>
+                <p class="post-row-desc">{post.data.description}</p>
+              </div>
+              <div class="post-row-right">
+                <time class="post-row-date" datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                </time>
+                <span class="post-row-arrow">→</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-inner">
+        <p class="cta-pre">Got a project in mind?</p>
+        <h2 class="cta-title">Let's make something<br /><em>great together.</em></h2>
+        <a href="mailto:rookietoninja.dev" class="btn btn-primary btn-lg">RookieToNinja.dev</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Base>
+
+<style>
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      padding-top: 3rem;
+    }
+
+    .hero-figure {
+      display: none;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+*/
+  @media (max-width: 600px) {
+    .post-row-desc { display: none; }
+    .post-row-date { display: none; }
+  }
+</style>

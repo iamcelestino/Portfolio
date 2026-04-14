@@ -1,0 +1,199 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const timeline = [
+  {
+    year: "2024–Now",
+    role: "Freelance Designer & Developer",
+    company: "Independent",
+    desc: "Working with startups and agencies across Europe and North America. Projects span product design, frontend engineering, and open source."
+  },
+  {
+    year: "2024-",
+    role: "Part-time Tech Teacher",
+    company: "Instituto Politecnico Privado Lobito",
+    desc: "Led design for the core recording and sharing experience. Part of the team that shipped the async video feature used by 14M people."
+  },
+  {
+    year: "2025",
+    role: "Head of Markerting and Communication",
+    company: "Associação Elavoko",
+    desc: "Designed the savings and investment products for the European neobank. Shipped features to 5M users across 25 markets."
+  },
+
+];
+
+const stack = {
+  "Design": ["Figma", "Illustrator", "Photoshop"],
+  "Frontend": ["HTML", "CSS", "Javascript", "Astro"],
+  "Backend": ["PHP", "PostgreSQL", "MySQl", "Laravel"],
+  "Tools": ["Docker", "Wordpress", "Google Analytics"],
+};
+
+---
+
+<Base title="About — Celestino Trosso" description="A little bit about who I am, what I've done, and how I work.">
+  <Nav />
+
+  <main>
+    <!-- Intro -->
+    <section class="about-hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-pre">About me</p>
+          <h1 class="hero-title">
+            Marketer who codes.<br />
+            <em>Developer who converts.</em>
+          </h1>
+          <div class="hero-body">
+            <p>
+              I'm Celestino Trosso, a designer and developer based in Berlin. I've spent the last eight years at the intersection of craft and engineering — making things that are both beautiful to look at and well-built underneath.
+            </p>
+            <p>
+              I believe the distinction between "designer" and "developer" is mostly artificial. The best products come from people who can hold both in mind at once: how something looks and how it works, what it communicates and how it's constructed.
+            </p>
+            <p>
+              Before going independent, I worked at Loom and N26. I grew up in Seoul, went to university in Berlin, and decided to stay. Outside of work I cook, run, and maintain an embarrassingly large reading list.
+            </p>
+          </div>
+          <div class="hero-links">
+            <a href="" class="hero-link primary">Get in touch →</a>
+            <a href="/work" class="hero-link">View my work</a>
+          </div>
+        </div>
+
+        <div class="hero-portrait">
+          <div class="portrait-img">
+            <div class="portrait-placeholder">
+              <span>RookieToNinja</span>
+            </div>
+          </div>
+          <div class="portrait-card">
+            <div class="pcard-row">
+              <span class="pcard-label">Location</span>
+              <span class="pcard-val">Benguela, Angola</span>
+            </div>
+            <div class="pcard-row">
+              <span class="pcard-label">Status</span>
+              <span class="available pcard-val">
+                <span class="dot"></span>Available for work
+              </span>
+            </div>
+            <div class="pcard-row">
+              <span class="pcard-label">Timezone</span>
+              <span class="pcard-val">CET (UTC+1)</span>
+            </div>
+            <div class="pcard-row">
+              <span class="pcard-label">Languages</span>
+              <span class="pcard-val">Portuguese, English</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-section">
+      <div class="section-inner">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          {timeline.map((entry, i) => (
+            <div class="timeline-entry">
+              <div class="entry-year">{entry.year}</div>
+              <div class="entry-connector">
+                <div class="connector-dot"></div>
+                {i < timeline.length - 1 && <div class="connector-line"></div>}
+              </div>
+              <div class="entry-content">
+                <h3 class="entry-role">{entry.role}</h3>
+                <p class="entry-company">{entry.company}</p>
+                <p class="entry-desc">{entry.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Stack -->
+    <section class="stack-section">
+      <div class="section-inner">
+        <h2 class="section-title">Tools & Stack</h2>
+        <div class="stack-grid">
+          {Object.entries(stack).map(([category, tools]) => (
+            <div class="stack-col">
+              <h3 class="stack-category">{category}</h3>
+              <ul class="stack-list" role="list">
+                {tools.map(tool => (
+                  <li class="stack-item">{tool}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="values-section">
+      <div class="section-inner">
+        <h2 class="section-title">How I work</h2>
+        <div class="values-grid">
+          <div class="value">
+            <h3 class="value-head">Craft over speed</h3>
+            <p class="value-body">I'd rather spend an extra day getting the details right than ship something I'm not proud of. That said, I believe in iterating in the open — early, imperfect, real.</p>
+          </div>
+          <div class="value">
+            <h3 class="value-head">Opinions, held lightly</h3>
+            <p class="value-body">I'll tell you what I think and why. But I change my mind when the evidence warrants it. Good collaboration requires real positions, not just validation.</p>
+          </div>
+          <div class="value">
+            <h3 class="value-head">Systems over solutions</h3>
+            <p class="value-body">I try to solve problems in ways that prevent the next ten problems from existing. A good design system is worth a hundred one-off solutions.</p>
+          </div>
+          <div class="value">
+            <h3 class="value-head">Writing as thinking</h3>
+            <p class="value-body">If I can't explain a design decision in a sentence or two, I don't understand it well enough yet. Writing forces the precision that sketches let you avoid.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Base>
+
+<style>
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .hero-portrait {
+      position: static;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .portrait-img { aspect-ratio: 1; }
+
+    .stack-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .reading-inner { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  @media (max-width: 600px) {
+    .values-grid { grid-template-columns: 1fr; }
+    .hero-portrait { grid-template-columns: 1fr; }
+    .stack-grid { grid-template-columns: 1fr 1fr; }
+
+    .timeline-entry {
+      grid-template-columns: 80px 24px 1fr;
+      gap: 1rem;
+    }
+  }*/
+</style>
