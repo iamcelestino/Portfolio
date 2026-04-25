@@ -1,4 +1,32 @@
+.hero {
+  .hero-description {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 
+  .btn { 
+      background: black;
+      color: white;
+      padding: 0.6rem 0.8rem;
+      display: inline-block;
+      border-radius: 50px;
+  }
+}
+
+.work {
+  .selected-work-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .section-link {
+        border: 2px solid lightgray;
+        border-radius: 50px;
+        padding: 0.6rem 0.8rem;
+        font-weight: 700;
+    }
+  }
+}
 /* Responsive */
 @media (max-width: 900px) {
   .hero {

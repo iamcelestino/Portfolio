@@ -13,18 +13,14 @@ const projects = [
   {
     name: "Associação Elavoko Website",
     type: "Product Design & Dev",
-    year: "2025",
-    description: "Associação Elavoko Website",
-    tags: ["Marketing ", "Communication ", " Voluteering"],
-    color: "#1a3a5c",
+    link: "www.google.com",
+    image: ""
   },
   {
     name: "DatsEnglish",
     type: "Dev & Marketing",
-    year: "2026",
-    description: "DatsEnglish website for my English speaking Mentoring Business",
-    tags: ["TypeScript", "Node.js", "React"],
-    color: "#2d1b4e",
+    link: "www.google.com",
+    image: ""
   },
 ];
 ---
@@ -45,48 +41,22 @@ const projects = [
           <em>things people</em>
           actually use.
         </h1>
-        <p class="hero-sub">
-          Marketer-developer hybrid with 1 years shipping products at the intersection of craft and engineering. Currently helping NGOs Conquequing the digital world in Angola.
-        </p>
-        <div class="hero-actions">
-          <a href="/work" class="btn btn-primary">View my work</a>
-          <a href="/blog" class="btn btn-ghost">Read the blog →</a>
+        <div class="hero-description">
+            <div class="hero-actions">
+              <a href="/work" class="btn btn-primary">View my work</a>
+              <a href="/blog" class="btn btn-ghost">Read the blog →</a>
+            </div>
+            <div>
+              <p class="hero-sub">
+                Marketer-developer hybrid with 1 years shipping products at the intersection of craft and engineering. Currently helping NGOs Conquequing the digital world in Angola.
+              </p>
+            </div>
         </div>
       </div>
-
-      <div class="hero-figure">
-        <div class="figure-card">
-          <div class="figure-avatar"></div>
-          <div class="figure-stats">
-            <div class="stat">
-              <span class="stat-num">1+</span>
-              <span class="stat-label">Years of craft</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">5+</span>
-              <span class="stat-label">Projects shipped</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">5</span>
-              <span class="stat-label">Happy clients</span>
-            </div>
-          </div>
-        </div>
-        <div class="figure-tools">
-          <span>Figma</span>
-          <span>Astro</span>
-          <span>SEO</span>
-           <span>Content Creation</span>
-          <span>TypeScript</span>
-          <span>Laravel</span>
-        </div>
-      </div>
-    </section>
-
     <!-- Selected Work -->
-    <section class="section">
+    <section class="work section">
       <div class="section-inner">
-        <div class="section-header">
+        <div class="selected-work-section-header">
           <h2 class="section-title">Selected Work</h2>
           <a href="/work" class="section-link">All projects →</a>
         </div>
@@ -94,31 +64,28 @@ const projects = [
           {projects.map((project, i) => (
             <article class="project-card" style={`--card-color: ${project.color}`}>
               <div class="card-header">
-                <div class="card-meta">
-                  <span class="card-type">{project.type}</span>
-                  <span class="card-year">{project.year}</span>
-                </div>
               </div>
               <div class="card-visual">
-                <span class="card-num">0{i + 1}</span>
+                  <img src={`${project.image}`} >
               </div>
-              <div class="card-body">
-                <h3 class="card-name">{project.name}</h3>
-                <p class="card-desc">{project.description}</p>
-                <div class="card-tags">
-                  {project.tags.map(tag => <span class="tag">{tag}</span>)}
-                </div>
+              <div>
+                  <div class="card-body">
+                    <h3 class="card-name">{project.name}</h3>
+                    <span class="card-type">{project.type}</span>
+                  </div>
+                  <div>
+                    <a href={`${project.image}`}>→</a>
+                  </div>
               </div>
             </article>
           ))}
         </div>
       </div>
     </section>
-
     <!-- Blog -->
     <section class="section section-alt">
       <div class="section-inner">
-        <div class="section-header">
+        <div class="">
           <h2 class="section-title">From the Blog</h2>
           <a href="/blog" class="section-link">All posts →</a>
         </div>
@@ -150,7 +117,6 @@ const projects = [
       </div>
     </section>
   </main>
-
   <Footer />
 </Base>
 
