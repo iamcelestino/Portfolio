@@ -11,33 +11,25 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 
 const projects = [
   {
-    name: "Meridian",
+    name: "Associação Elavoko Website",
     type: "Product Design & Dev",
-    year: "2024",
-    description: "A time-tracking app for freelancers that doesn't feel like work. Built with Svelte and SQLite.",
-    tags: ["Svelte", "Design Systems", "UX"],
+    year: "2025",
+    description: "Associação Elavoko Website",
+    tags: ["Marketing ", "Communication ", " Voluteering"],
     color: "#1a3a5c",
   },
   {
-    name: "Folio CMS",
-    type: "Open Source",
-    year: "2024",
-    description: "Headless CMS built specifically for creative agencies. 2.4k GitHub stars, actively maintained.",
+    name: "DatsEnglish",
+    type: "Dev & Marketing",
+    year: "2026",
+    description: "DatsEnglish website for my English speaking Mentoring Business",
     tags: ["TypeScript", "Node.js", "React"],
     color: "#2d1b4e",
-  },
-  {
-    name: "Grounded",
-    type: "Brand & Interface",
-    year: "2023",
-    description: "Full brand identity and e-commerce experience for an ethical coffee roaster.",
-    tags: ["Branding", "Shopify", "Motion"],
-    color: "#2a1a0e",
   },
 ];
 ---
 
-<Base title="Alex Kim — Designer & Developer">
+<Base title="Celestino Trosso — Marketer-developer">
   <Nav />
   
   <main>
@@ -83,8 +75,10 @@ const projects = [
         <div class="figure-tools">
           <span>Figma</span>
           <span>Astro</span>
+          <span>SEO</span>
+           <span>Content Creation</span>
           <span>TypeScript</span>
-          <span>React Js</span>
+          <span>Laravel</span>
         </div>
       </div>
     </section>
