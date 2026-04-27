@@ -107,6 +107,20 @@ a {
   padding: 2rem 0;
 }
 
+.about-me article {
+  display: flex;
+  justify-content: space-between;
+}
+.about-me .insight-title-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog .post-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .hero {

@@ -38,6 +38,29 @@
   }
 }
 
+.about-me {
+
+   article {
+    display: flex;
+    justify-content: space-between;
+   }
+
+   .insight-title-wrap {
+    display: flex;
+    justify-content: space-between;
+   }
+
+}
+
+
+.blog {
+  .post-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .hero {
