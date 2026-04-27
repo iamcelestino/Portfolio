@@ -16,7 +16,8 @@ const currentPath = Astro.url.pathname;
       <span class="logo-name">Celestino Trosso</span>
     </a>
     
-    <ul class="nav-links" role="list">
+    <div>
+      <ul class="nav-links" role="list">
       {navLinks.map(link => (
         <li>
           <a 
@@ -31,5 +32,11 @@ const currentPath = Astro.url.pathname;
     <a href="mailto:rookieToNinja.dev" class="nav-cta">
       Let's talk →
     </a>
+      <div class="nav-burger-menu">
+          <span class=""></span>
+            <span class=""></span>
+            <span class=""></span>
+      </div>
+    </div>
   </nav>
 </header>
