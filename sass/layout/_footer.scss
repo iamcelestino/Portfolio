@@ -1,5 +1,26 @@
-  .footer {
-    margin-top: 8rem;
-    border-top: 1px solid 10px;
-    padding: 3rem 2rem;
+.footer {
+  background: black;
+  margin-top: 8rem;
+  border-top: 1px solid 10px;
+  color: white;
+  padding: 2rem 1rem;
+
+  .footer-links {
+    display: flex;
+    justify-content: space-around;
+
+    
+    a {
+      display: inline-block;
+      border: 2px solid gray;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+    }
   }
+
+
+  .footer-center {
+    text-align: center;
+  }
+
+}

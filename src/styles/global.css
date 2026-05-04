@@ -104,7 +104,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0;
 }
 
 .about-me article {
@@ -119,6 +118,10 @@ a {
 .blog .post-wrap {
   display: flex;
   justify-content: space-between;
+}
+
+.cta-section {
+  text-align: center;
 }
 
 /* Responsive */
@@ -365,7 +368,22 @@ a {
   }
 }
 .footer {
+  background: black;
   margin-top: 8rem;
   border-top: 1px solid 10px;
-  padding: 3rem 2rem;
+  color: white;
+  padding: 2rem 1rem;
+}
+.footer .footer-links {
+  display: flex;
+  justify-content: space-around;
+}
+.footer .footer-links a {
+  display: inline-block;
+  border: 2px solid gray;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+.footer .footer-center {
+  text-align: center;
 }
