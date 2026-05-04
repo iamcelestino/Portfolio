@@ -35,7 +35,8 @@ const projects = [
   <main>
     <!-- Hero -->
     <section class="hero">
-      <div class="hero-inner">
+      <div class="container">
+          <div class="hero-inner">
         <div class="hero-badge">
           <span class="badge-dot"></span>
           Available for work · Based in Angola
@@ -57,89 +58,98 @@ const projects = [
             </div>
         </div>
       </div>
+      </div>
+    </section>
     <!-- Selected Work -->
     <section class="work section">
-      <div class="section-inner">
-        <div class="selected-work-section-header">
-          <h2 class="section-title">Selected Work</h2>
-          <a href="/work" class="section-link">All projects →</a>
-        </div>
-        <div class="projects-grid">
-          {projects.map((project, i) => (
-            <article class="project-card" style={`--card-color: ${project.color}`}>
-              <div class="card-header">
-              </div>
-              <div class="card-visual">
-                  <Image src={project.image} alt="A description of my image." class="project-image" layout='constrained' width={800} height={400} />
-              </div>
-              <div>
-                  <div class="card-body">
-                    <h3 class="card-name">{project.name}</h3>
-                    <span class="card-type">{project.type}</span>
-                  </div>
-                  <div>
-                  </div>
-              </div>
-            </article>
-          ))}
+      <div class="container">
+        <div class="section-inner">
+          <div class="selected-work-section-header">
+            <h2 class="section-title">Selected Work</h2>
+            <a href="/work" class="section-link">All projects →</a>
+          </div>
+          <div class="projects-grid">
+            {projects.map((project, i) => (
+              <article class="project-card" style={`--card-color: ${project.color}`}>
+                <div class="card-header">
+                </div>
+                <div class="card-visual">
+                    <Image src={project.image} alt="A description of my image." class="project-image" layout='constrained' width={800} height={400} />
+                </div>
+                <div>
+                    <div class="card-body">
+                      <h3 class="card-name">{project.name}</h3>
+                      <span class="card-type">{project.type}</span>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
 
      <!-- About me-->
      <section class="about-me">
-       <div class="section-inner">
-         <article class="">
-              <div>
-                  <h1 class="about-me-intro">A Web developer who master the tools for your digital growth</h1>
-                  <p>I'm Celestino Trosso, a Marketer and developer based in Angola. Studying Computer Engineering and Business Management, I've spent the last two years at the intersection of craft and engineering — making things that don't just look great but also sale.</p>
-                  <a href="/about" class="about-btn">About me</a>
-              </div>
-             <div class="about-skills">
-                <div class="about-skill">SEO</div>
-                <div class="about-skill">Web Developmnet and Design</div>
-                <div class="about-skill">UX Experience</div>
-                <div class="about-skill">Content Marketing</div>
-                <div class="about-skill">Social Media Management</div>
-             </div>
-         </article>
-       </div>
+      <div class="container">
+          <div class="section-inner">
+           <article class="">
+                <div>
+                    <h1 class="about-me-intro">A Web developer who master the tools for your digital growth</h1>
+                    <p>I'm Celestino Trosso, a Marketer and developer based in Angola. Studying Computer Engineering and Business Management, I've spent the last two years at the intersection of craft and engineering — making things that don't just look great but also sale.</p>
+                    <a href="/about" class="about-btn">About me</a>
+                </div>
+               <div class="about-skills">
+                  <div class="about-skill">SEO</div>
+                  <div class="about-skill">Web Developmnet and Design</div>
+                  <div class="about-skill">UX Experience</div>
+                  <div class="about-skill">Content Marketing</div>
+                  <div class="about-skill">Social Media Management</div>
+               </div>
+           </article>
+         </div>
+      </div>
      </section>
 
     <!-- Blog -->
-        <!-- Blog -->
     <section class="blog section">
-      <div class="section-inner">
-        <div class="insight-title-wrap">
-          <h2 class="section-title">Sometimes I write and share some Insights</h2>
-          <a href="/blog" class="section-link">All insights →</a>
-        </div>
-        <div class="posts-list">
-          {posts.map((post) => (
-            <a href={`/blog/${post.id}`} class="post-row">
-              <div class="post-wrap">
-                  <div class="post-row-left">
-                    <h3 class="post-row-title">{post.data.title}</h3>
-                    <p class="post-row-desc">{post.data.description}</p>
-                    <time class="post-row-date" datetime={post.data.pubDate.toISOString()}>
-                      {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                    </time>
-                  </div>
-                  <div class="post-row-right">
-                    <ion-icon name="arrow-up-outline"></ion-icon>
-                  </div>
-              </div>
-            </a>
-          ))}
+      <div class="container">
+        <div class="section-inner">
+          <div class="insight-title-wrap">
+            <h2 class="section-title">Sometimes I write and share some Insights</h2>
+            <a href="/blog" class="section-link">All insights →</a>
+          </div>
+          <div class="posts-list">
+            {posts.map((post) => (
+              <a href={`/blog/${post.id}`} class="post-row">
+                <div class="post-wrap">
+                    <div class="post-row-left">
+                      <h3 class="post-row-title">{post.data.title}</h3>
+                      <p class="post-row-desc">{post.data.description}</p>
+                      <time class="post-row-date" datetime={post.data.pubDate.toISOString()}>
+                        {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                      </time>
+                    </div>
+                    <div class="post-row-right">
+                      <ion-icon name="arrow-up-outline"></ion-icon>
+                    </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
     <!-- CTA -->
     <section class="cta-section">
-      <div class="cta-inner">
-        <p class="cta-pre">Got a project in mind?</p>
-        <h2 class="cta-title">Let's make something<br /><em>great together.</em></h2>
-        <a href="mailto:rookietoninja.dev" class="btn btn-primary btn-lg">RookieToNinja.dev</a>
+      <div class="container">
+          <div class="cta-inner">
+            <p class="cta-pre">Got a project in mind?</p>
+            <h2 class="cta-title"><span>Let's make something</span><br /><em>great together.</em></h2>
+            <a href="mailto:rookietoninja.dev" class="btn btn-primary btn-lg">RookieToNinja.dev</a>
+          </div>
       </div>
     </section>
   </main>

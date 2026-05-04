@@ -7,17 +7,29 @@
 
   .footer-links {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
-    
     a {
+      color: white;
       display: inline-block;
       border: 2px solid gray;
-      padding: 0.5rem 1rem;
+      padding: 0.2rem 4rem;
       border-radius: 50px;
     }
   }
 
+  .footer-grid-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      margin: 1rem 0;
+    }
+  }
 
   .footer-center {
     text-align: center;
