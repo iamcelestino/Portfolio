@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Base from '../layouts/Base.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
 
 const timeline = [
   {
@@ -43,54 +44,26 @@ const stack = {
     <section class="about-hero">
       <div class="hero-inner">
         <div class="hero-text">
-          <p class="hero-pre">About me</p>
-          <h1 class="hero-title">
-            Marketer who codes.<br />
-            <em>Developer who converts.</em>
-          </h1>
-          <div class="hero-body">
-            <p>
-              I'm Celestino Trosso, a Marketer and developer based in Angola. Studying Computer Engineering and Business Management, I've spent the last two years at the intersection of craft and engineering — making things that don't just look great but also sale.
-            </p>
-            <p>
-              I believe the distinction between "Marekter" and "developer" is mostly artificial. The best products come from people who can hold both in mind at once: how something looks and how it works, what it communicates and how it's constructed.
-            </p>
-            <p>
-              Before going independent, I worked at Colegio Politecnico Privato do Lobito helping young people writing their first line of code. I grew up in Lobito, went to university in Benguela, and decided to stay. Outside of work I am entrepreneur mentoring beginners to level up their english speaking skills, I create content, and maintain an embarrassingly large reading list.
-            </p>
+          <div>
+            <p class="hero-pre">About me</p>
+            <h1 class="hero-title">
+              Marketer who codes.<br />
+              <em>Developer who converts.</em>
+            </h1>
           </div>
-          <div class="hero-links">
-            <a href="" class="hero-link primary">Get in touch →</a>
-            <a href="/work" class="hero-link">View my work</a>
+          <div>
+            <div class="hero-body">
+              <p>
+                I'm Celestino Trosso, a Marketer and developer based in Angola. Studying Computer Engineering and Business Management, I've spent the last two years at the intersection of craft and engineering — making things that don't just look great but also sale.
+              </p>
+            </div>
+            <div class="hero-link">
+              <a href="" class="hero-link primary">Let's Talk →</a>
+            </div>
           </div>
         </div>
-
-        <div class="hero-portrait">
-          <div class="portrait-img">
-            <div class="portrait-placeholder">
-              <span>RookieToNinja</span>
-            </div>
-          </div>
-          <div class="portrait-card">
-            <div class="pcard-row">
-              <span class="pcard-label">Location</span>
-              <span class="pcard-val">Benguela, Angola</span>
-            </div>
-            <div class="pcard-row">
-              <span class="pcard-label">Status</span>
-              <span class="available pcard-val">
-                <span class="dot"></span>Available for work
-              </span>
-            </div>
-            <div class="pcard-row">
-              <span class="pcard-label">Timezone</span>
-              <span class="pcard-val">CET (UTC+1)</span>
-            </div>
-            <div class="pcard-row">
-              <span class="pcard-label">Languages</span>
-              <span class="pcard-val">Portuguese, English</span>
-            </div>
-          </div>
+        <div class="hero-image">
+             <!-- <Image src="" alt="A description of my image." class="project-image" layout='constrained' width={800} height={400} /> -->
         </div>
       </div>
     </section>
@@ -98,19 +71,20 @@ const stack = {
     <!-- Timeline -->
     <section class="timeline-section">
       <div class="section-inner">
-        <h2 class="section-title">Experience</h2>
+        <h2 class="section-title">My Experience</h2>
         <div class="timeline">
           {timeline.map((entry, i) => (
             <div class="timeline-entry">
-              <div class="entry-year">{entry.year}</div>
               <div class="entry-connector">
                 <div class="connector-dot"></div>
                 {i < timeline.length - 1 && <div class="connector-line"></div>}
               </div>
               <div class="entry-content">
                 <h3 class="entry-role">{entry.role}</h3>
-                <p class="entry-company">{entry.company}</p>
-                <p class="entry-desc">{entry.desc}</p>
+                <div class="entry-description">
+                    <p class="entry-company">{entry.company}</p>
+                    <p class="entry-year">{entry.year}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -137,28 +111,13 @@ const stack = {
       </div>
     </section>
 
-    <!-- Values -->
-    <section class="values-section">
-      <div class="section-inner">
-        <h2 class="section-title">How I work</h2>
-        <div class="values-grid">
-          <div class="value">
-            <h3 class="value-head">Craft over speed</h3>
-            <p class="value-body">I'd rather spend an extra day getting the details right than ship something I'm not proud of. That said, I believe in iterating in the open — early, imperfect, real.</p>
+    <section class="cta-section">
+      <div class="container">
+          <div class="cta-inner">
+            <p class="cta-pre">Got a project in mind?</p>
+            <h2 class="cta-title"><span>Let's make something</span><br /><em>great together.</em></h2>
+            <a href="mailto:rookietoninja.dev" class="btn btn-primary btn-lg">RookieToNinja.dev</a>
           </div>
-          <div class="value">
-            <h3 class="value-head">Opinions, held lightly</h3>
-            <p class="value-body">I'll tell you what I think and why. But I change my mind when the evidence warrants it. Good collaboration requires real positions, not just validation.</p>
-          </div>
-          <div class="value">
-            <h3 class="value-head">Systems over solutions</h3>
-            <p class="value-body">I try to solve problems in ways that prevent the next ten problems from existing. A good design system is worth a hundred one-off solutions.</p>
-          </div>
-          <div class="value">
-            <h3 class="value-head">Writing as thinking</h3>
-            <p class="value-body">If I can't explain a design decision in a sentence or two, I don't understand it well enough yet. Writing forces the precision that sketches let you avoid.</p>
-          </div>
-        </div>
       </div>
     </section>
   </main>
