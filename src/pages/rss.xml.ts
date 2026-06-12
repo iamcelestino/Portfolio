@@ -4,8 +4,8 @@ import { getCollection } from 'astro:content';
 export async function GET(context) {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
   return rss({
-    title: 'Alex Kim — Blog',
-    description: 'Writing about design, development, and the craft of building things.',
+    title: 'Celestino Trosso — Blog',
+    description: 'Writing about Marketing, development, and the craft of building things.',
     site: context.site,
     items: posts
       .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())

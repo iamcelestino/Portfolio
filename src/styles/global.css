@@ -13,6 +13,10 @@ a {
   text-decoration: none;
 }
 
+.container {
+  padding: 0 2rem;
+}
+
 .nav-links {
   display: none;
 }
@@ -53,7 +57,6 @@ a {
   font-size: 8rem;
   line-height: 1;
   letter-spacing: -0.05em;
-  color: var(--border);
   margin-bottom: 1rem;
 }
 
@@ -171,6 +174,11 @@ a {
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
 }
+.timeline-section .entry-description {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media (max-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -264,7 +272,7 @@ a {
   margin-top: 8rem;
   border-top: 1px solid 10px;
   color: white;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
 }
 .footer .footer-links {
   display: flex;
