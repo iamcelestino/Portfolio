@@ -198,17 +198,17 @@ a {
 .about-hero {
   padding-top: 2rem;
 }
-.about-hero .hero-link {
-  background: black;
-  padding: 0.8rem;
-  font-size: 20px;
-  font-weight: 900;
-  color: white;
-  text-align: center;
-  border-radius: 50px;
+.about-hero .hero-inner {
   max-width: 100%;
 }
-.about-hero .hero-text > div {
+.about-hero .primary {
+  background: black;
+  font-size: 20px;
+  font-weight: 900;
+  border-radius: 50px;
+  display: inline-block;
+}
+.about-hero .text {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -279,6 +279,23 @@ a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
+.work-header {
+  padding: 2rem 0;
+}
+
+.projects-section {
+  padding-top: 4rem;
+}
+
+.services-section {
+  padding: 4rem 0;
+}
+.services-section .services-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
 @media (max-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);

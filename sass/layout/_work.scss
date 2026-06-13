@@ -1,3 +1,27 @@
+.work-header {
+  padding: 2rem 0;
+}
+
+.projects-section {
+    padding-top: 4rem;
+}
+
+.services-section {
+  padding: 4rem 0;
+      .services-grid {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 6px;
+      }
+}
+
+
+
+
+
+
+
+
 
 @media (max-width: 1024px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
