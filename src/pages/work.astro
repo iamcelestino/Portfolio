@@ -46,20 +46,23 @@ const services = [
 ];
 ---
 
-<Base title="Work — Alex Kim" description="Selected projects spanning product design, frontend development, and brand identity.">
+<Base title="Work — Celestino Trosso" description="Selected projects spanning product design, frontend development, and brand identity.">
   <Nav />
 
   <main>
     <header class="work-header">
-      <div class="header-inner">
-        <p class="header-pre">Selected Work</p>
-        <h1 class="header-title">Projects I'm<br /><em>proud of.</em></h1>
-        <p class="header-sub">Eight years of work distilled into the pieces that mattered most. A mix of product design, open source, and brand work.</p>
+      <div class="container">
+        <div class="header-inner">
+          <p class="header-pre">Selected Work</p>
+          <h1 class="header-title">Projects I'm<br /><em>proud of.</em></h1>
+          <p class="header-sub">Eight years of work distilled into the pieces that mattered most. A mix of product design, open source, and brand work.</p>
+        </div>
       </div>
     </header>
 
     <section class="projects-section">
-      <div class="projects-inner">
+      <div class="container">
+        <div class="projects-inner">
         {projects.map((project) => (
           <article class="project" id={`project-${project.id}`}>
             <div class="project-sidebar">
@@ -104,11 +107,13 @@ const services = [
           </article>
         ))}
       </div>
+      </div>
     </section>
 
     <!-- Services -->
     <section class="services-section">
-      <div class="services-inner">
+      <div class="container">
+          <div class="services-inner">
         <div class="services-header">
           <h2 class="services-title">What I do</h2>
           <p class="services-sub">I work across the full product lifecycle — from shaping ideas to shipping them.</p>
@@ -123,13 +128,17 @@ const services = [
           ))}
         </div>
       </div>
+      </div>
     </section>
 
     <!-- CTA strip -->
-    <section class="cta-strip">
-      <div class="cta-inner">
-        <h2 class="cta-text">Have a project in mind?</h2>
-        <a href="mailto:hello@alexkim.dev" class="cta-btn">Let's talk →</a>
+    <section class="cta-section">
+      <div class="container">
+          <div class="cta-inner">
+            <p class="cta-pre">Got a project in mind?</p>
+            <h2 class="cta-title"><span>Let's make something</span><br /><em>great together.</em></h2>
+            <a href="mailto:rookietoninja.dev" class="btn btn-primary btn-lg">RookieToNinja.dev</a>
+          </div>
       </div>
     </section>
   </main>

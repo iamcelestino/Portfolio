@@ -42,7 +42,8 @@ const stack = {
   <main>
     <!-- Intro -->
     <section class="about-hero">
-      <div class="hero-inner">
+      <div class="container">
+          <div class="hero-inner">
         <div class="hero-text">
           <div>
             <p class="hero-pre">About me</p>
@@ -66,47 +67,52 @@ const stack = {
              <!-- <Image src="" alt="A description of my image." class="project-image" layout='constrained' width={800} height={400} /> -->
         </div>
       </div>
+      </div>
     </section>
 
     <!-- Timeline -->
     <section class="timeline-section">
-      <div class="section-inner">
-        <h2 class="section-title">My Experience</h2>
-        <div class="timeline">
-          {timeline.map((entry, i) => (
-            <div class="timeline-entry">
-              <div class="entry-connector">
-                <div class="connector-dot"></div>
-                {i < timeline.length - 1 && <div class="connector-line"></div>}
-              </div>
-              <div class="entry-content">
-                <h3 class="entry-role">{entry.role}</h3>
-                <div class="entry-description">
-                    <p class="entry-company">{entry.company}</p>
-                    <p class="entry-year">{entry.year}</p>
+      <div class="container">
+        <div class="section-inner">
+          <h2 class="section-title">My Experience</h2>
+          <div class="timeline">
+            {timeline.map((entry, i) => (
+              <div class="timeline-entry">
+                <div class="entry-connector">
+                  <div class="connector-dot"></div>
+                  {i < timeline.length - 1 && <div class="connector-line"></div>}
+                </div>
+                <div class="entry-content">
+                  <h3 class="entry-role">{entry.role}</h3>
+                  <div class="entry-description">
+                      <p class="entry-company">{entry.company}</p>
+                      <p class="entry-year">{entry.year}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+      </div>
       </div>
     </section>
 
     <!-- Stack -->
     <section class="stack-section">
-      <div class="section-inner">
-        <h2 class="section-title">Tools & Stack</h2>
-        <div class="stack-grid">
-          {Object.entries(stack).map(([category, tools]) => (
-            <div class="stack-col">
-              <h3 class="stack-category">{category}</h3>
-              <ul class="stack-list" role="list">
-                {tools.map(tool => (
-                  <li class="stack-item">{tool}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+      <div class="container">
+        <div class="section-inner">
+          <h2 class="section-title">Tools & Stack</h2>
+          <div class="stack-grid">
+            {Object.entries(stack).map(([category, tools]) => (
+              <div class="stack-col">
+                <h3 class="stack-category">{category}</h3>
+                <ul class="stack-list" role="list">
+                  {tools.map(tool => (
+                    <li class="stack-item">{tool}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

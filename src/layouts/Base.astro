@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
@@ -31,48 +32,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <script nomodule src="https://unpkg.com/ionicons@undefined/dist/ionicons/ionicons.js"></script>
 
   <title>{title}</title>
-
-  <style is:global>
-    :root {
-      --font-display: 'DM Serif Display', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
-      --font-mono: 'DM Mono', monospace;
-      
-      --nav-height: 72px;
-      --max-width: 1200px;
-      --content-width: 720px;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--font-body);
-      font-size: 17px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .container {
-      margin: 0 auto;
-      max-width: 1200px;
-    }
-
-    .project-image {
-      max-width: 100%;
-    }
-    
-  </style>
 </head>
 <body>
   <slot />

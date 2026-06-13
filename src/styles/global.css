@@ -1,8 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;800&display=swap");
+:root {
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --nav-height: 72px;
+  --max-width: 1200px;
+  --content-width: 720px;
+}
+
 *, *::before, *::after {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.project-image {
+  max-width: 100%;
+}
+
+.post-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--paper-2);
+  padding: 4rem 2rem 3rem;
 }
 
 li {
@@ -11,10 +50,6 @@ li {
 
 a {
   text-decoration: none;
-}
-
-.container {
-  padding: 0 2rem;
 }
 
 .nav-links {

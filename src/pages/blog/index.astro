@@ -11,7 +11,7 @@ const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
 const allTags = [...new Set(allPosts.flatMap(p => p.data.tags ?? []))].sort();
 ---
 
-<Base title="Blog — Alex Kim" description="Writing about design, development, and the craft of building things.">
+<Base title="Blog — Celestino Trosso" description="Writing about design, development, and the craft of building things.">
   <Nav />
   
   <main>
