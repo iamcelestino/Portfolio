@@ -16,22 +16,25 @@ const allTags = [...new Set(allPosts.flatMap(p => p.data.tags ?? []))].sort();
   
   <main>
     <section class="blog-header">
-      <div class="header-inner">
-        <p class="header-pre">Writing</p>
-        <h1 class="header-title">Thoughts on craft,<br /><em>code & design.</em></h1>
-        <p class="header-sub">{allPosts.length} essays on design systems, frontend development, and building things that last.</p>
-        
-        <div class="tag-filter">
-          <a href="/blog" class="filter-tag active">All</a>
-          {allTags.map(tag => (
-            <a href={`/blog/tag/${tag}`} class="filter-tag">{tag}</a>
-          ))}
-        </div>
+      <div class="container">
+          <div class="header-inner">
+            <p class="header-pre">Writing</p>
+            <h1 class="header-title">Thoughts on craft,<br /><em>code & design.</em></h1>
+            <p class="header-sub">{allPosts.length} essays on design systems, frontend development, and building things that last.</p>
+            
+            <div class="tag-filter">
+              <a href="/blog" class="filter-tag active">All</a>
+              {allTags.map(tag => (
+                <a href={`/blog/tag/${tag}`} class="filter-tag">{tag}</a>
+              ))}
+            </div>
+          </div>
       </div>
     </section>
 
     <section class="posts-section">
-      <div class="posts-inner">
+      <div class="container">
+          <div class="posts-inner">
         {allPosts.map((post, i) => (
           <a href={`/blog/${post.id}`} class="post-item">
             <div class="post-index">{String(i + 1).padStart(2, '0')}</div>
@@ -56,6 +59,7 @@ const allTags = [...new Set(allPosts.flatMap(p => p.data.tags ?? []))].sort();
             <div class="post-arrow">→</div>
           </a>
         ))}
+      </div>
       </div>
     </section>
   </main>

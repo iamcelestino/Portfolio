@@ -18,7 +18,8 @@ const { title, description, pubDate, tags } = post.data;
   <main>
     <article class="post-article">
       <header class="post-header">
-        <div class="header-inner">
+        <div class="container">
+          <div class="header-inner">
           <div class="post-meta">
             <a href="/blog" class="back-link">← All posts</a>
             <div class="post-meta-right">
@@ -48,6 +49,7 @@ const { title, description, pubDate, tags } = post.data;
             </div>
           </div>
         </div>
+        </div>
       </header>
 
       <div class="post-body">
@@ -59,13 +61,15 @@ const { title, description, pubDate, tags } = post.data;
       </div>
 
       <footer class="post-footer">
-        <div class="footer-inner">
+        <div class="container">
+          <div class="footer-inner">
           <hr class="divider" />
           <div class="nav-posts">
             <a href="/blog" class="nav-post-back">
               ← Back to blog
             </a>
           </div>
+        </div>
         </div>
       </footer>
     </article>
