@@ -15,10 +15,15 @@
 
 .work {
 
+  article {
+    margin: 3rem 0;
+  }
+
   .selected-work-section-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 2rem 0;
 
     .section-link {
         border: 2px solid lightgray;
@@ -35,14 +40,29 @@
     align-items: center;
     justify-content: center;
   }
+
+  .card-body {
+    margin-top: 1rem;
+  }
 }
 
 .about-me {
+    margin-bottom: 3rem;
 
    article {
-    display: flex;
-    justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      justify-content:  space-between;
    }
+
+    .about-btn {
+      border: 1 solid black;
+    }
+
+    .about-skill + .about-skill {
+      margin-top: 1rem;
+    }
 
    .insight-title-wrap {
     display: flex;
@@ -51,6 +71,7 @@
 }
 
 .blog {
+    margin: 3rem 0;
   .post-wrap {
     display: flex;
     justify-content: space-between;

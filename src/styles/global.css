@@ -125,10 +125,14 @@ a {
   border-radius: 50px;
 }
 
+.work article {
+  margin: 3rem 0;
+}
 .work .selected-work-section-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 2rem 0;
 }
 .work .selected-work-section-header .section-link {
   border: 2px solid lightgray;
@@ -143,16 +147,33 @@ a {
   align-items: center;
   justify-content: center;
 }
+.work .card-body {
+  margin-top: 1rem;
+}
 
+.about-me {
+  margin-bottom: 3rem;
+}
 .about-me article {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
   justify-content: space-between;
+}
+.about-me .about-btn {
+  border: 1 solid black;
+}
+.about-me .about-skill + .about-skill {
+  margin-top: 1rem;
 }
 .about-me .insight-title-wrap {
   display: flex;
   justify-content: space-between;
 }
 
+.blog {
+  margin: 3rem 0;
+}
 .blog .post-wrap {
   display: flex;
   justify-content: space-between;
@@ -336,14 +357,17 @@ a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
-@media (max-width: 600px) {
-  .post-item {
-    grid-template-columns: 1fr auto;
-  }
-  .post-index {
-    display: none;
-  }
+.header-inner {
+  padding: 3rem 0;
+  text-align: center;
 }
+.header-inner .tag-filter a {
+  display: inline-block;
+}
+.header-inner .tag-filter a + a {
+  margin-left: 1.5rem;
+}
+
 .footer {
   background: black;
   margin-top: 8rem;

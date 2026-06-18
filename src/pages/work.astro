@@ -4,42 +4,41 @@ import Base from '../layouts/Base.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
-const projects = [
-  {
-    id: "01",
-    name: "Meridian",
-    type: "Product Design & Development",
-    year: "2024",
-    client: "Personal Project",
-    description: "A time-tracking app for freelancers that strips away everything that doesn't matter. Built after spending a week bouncing between five different tools, none of which felt like they were made for how creative people actually work.",
-    longDesc: "The core insight: most time-trackers are built for managers, not makers. Meridian tracks time the way a freelancer thinks — by project and feel, not by ticket and department. The result is a tool that gets out of the way.",
-    tags: ["Svelte", "SQLite", "Product Design", "UX Research"],
-    color: "#1a3a5c",
-    accent: "#4a9eff",
-    stat1: { val: "2.1k", label: "Active users" },
-    stat2: { val: "4.8★", label: "App store" },
-    link: "#",
-  },
-  {
-    id: "02",
-    name: "Folio CMS",
-    type: "Open Source Tool",
-    year: "2024",
-    client: "Open Source",
-    description: "A headless CMS built specifically for creative agencies. Existing solutions were either too opinionated about structure or too primitive to model the complex relationships between campaigns, assets, and clients.",
-    longDesc: "The schema builder supports recursive and polymorphic content types. The media layer handles editorial workflows with approval states. 2.4k GitHub stars and growing.",
-    tags: ["TypeScript", "Node.js", "React", "PostgreSQL"],
-    color: "#2d1b4e",
-    accent: "#a78bfa",
-    stat1: { val: "2.4k", label: "GitHub stars" },
-    stat2: { val: "340+", label: "Contributors" },
-    link: "#",
-  },
-];
+// const projects = [
+//   {
+//     id: "01",
+//     name: "Associacao Elavoko",
+//     type: "Web Development & Marketing",
+//     year: "2024",
+//     client: "Personal Project",
+//     description: "",
+//     longDesc: "",
+//     tags: ["Svelte", "SQLite", "Product Design", "UX Research"],
+//     color: "#1a3a5c",
+//     accent: "#4a9eff",
+//     stat1: { val: "", label: "" },
+//     stat2: { val: "", label: "" },
+//     link: "#",
+//   },
+//   {
+//     id: "02",
+//     name: "Datsenglish",
+//     type: "Web Development and Marketing",
+//     year: "2024",
+//     client: "Open Source",
+//     description: "",
+//     longDesc: "",
+//     tags: ["TypeScript", "Node.js", "React", "PostgreSQL"],
+//     color: "#2d1b4e",
+//     accent: "#a78bfa",
+//     stat1: { val: "", label: "" },
+//     stat2: { val: "", label: "" },
+//     link: "#",
+//   },
+// ];
 
 const services = [
   { name: "Product Design", desc: "From concept to shipping — research, wireframes, high-fidelity UI, and prototypes." },
-  { name: "Frontend Development", desc: "HTML, CSS, Javascript, TypeScript, Astro. Fast, accessible, and built to last." },
   { name: "Frontend Development", desc: "HTML, CSS, Javascript, TypeScript, Astro. Fast, accessible, and built to last." },
   { name: "Backend", desc: "PHP, Databases, Laravel, Basic Java, Docker" },
   { name: "Social Media Management", desc: "Manage Social Media for small business in Angola." },
@@ -55,12 +54,12 @@ const services = [
         <div class="header-inner">
           <p class="header-pre">Selected Work</p>
           <h1 class="header-title">Projects I'm<br /><em>proud of.</em></h1>
-          <p class="header-sub">Eight years of work distilled into the pieces that mattered most. A mix of product design, open source, and brand work.</p>
+          <p class="header-sub">1 year of work distilled into the pieces that mattered most. A mix of Web development and Marketing</p>
         </div>
       </div>
     </header>
 
-    <section class="projects-section">
+<!--     <section class="projects-section">
       <div class="container">
         <div class="projects-inner">
         {projects.map((project) => (
@@ -108,7 +107,7 @@ const services = [
         ))}
       </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Services -->
     <section class="services-section">
