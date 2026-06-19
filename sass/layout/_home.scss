@@ -1,14 +1,22 @@
 .hero {
+  margin-top: 3rem;
+
+  .hero-title {
+    font-size: 55px;
+  }
+
   .hero-description {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin: 1rem 0;
   }
 
   .btn { 
       background: black;
       color: white;
-      padding: 0.6rem 0.8rem;
+      padding: 1rem 2rem;
       display: inline-block;
+      font-weight: bold;
       border-radius: 50px;
   }
 }
@@ -49,6 +57,10 @@
 .about-me {
     margin-bottom: 3rem;
 
+    .about-me-intro {
+      font-size: 45px;
+    }
+
    article {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -56,8 +68,15 @@
       justify-content:  space-between;
    }
 
+   .about-skills {
+      justify-self: end;
+   }
+
     .about-btn {
-      border: 1 solid black;
+      display: inline-block;
+      padding: 0.8rem 1rem;
+      border: 1px solid black;
+      border-radius: 50px;
     }
 
     .about-skill + .about-skill {
